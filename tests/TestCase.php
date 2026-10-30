@@ -32,7 +32,6 @@ class TestCase extends OrchestraTestCase
      */
     protected function defineDatabaseMigrations()
     {
-        $this->loadLaravelMigrations();
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadMigrationsFrom(__DIR__ . '/Migrations');
     }

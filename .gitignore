@@ -10,3 +10,4 @@
 /.phpdoc
 /tools/phpDocumentor
 /.env
+/.phpunit.cache
