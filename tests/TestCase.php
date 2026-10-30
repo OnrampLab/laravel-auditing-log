@@ -1,6 +1,6 @@
 <?php
 
-namespace Onramplab\AuditingLog\Tests;
+namespace OnrampLab\AuditingLog\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use OnrampLab\AuditingLog\AuditingLogServiceProvider;
