@@ -8,5 +8,6 @@
 /.phpunit.result.cache
 /build
 /.phpdoc
-/tools/phpDocumentor
+/tools/phpdocumentor
 /.env
+/.phpunit.cache

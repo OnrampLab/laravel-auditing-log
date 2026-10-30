@@ -2,6 +2,7 @@
 
 namespace OnrampLab\AuditingLog\Tests\Unit\Concerns;
 
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Str;
 use OnrampLab\AuditingLog\Concerns\Auditable;
 use OnrampLab\AuditingLog\Tests\Classes\User;
@@ -12,6 +13,8 @@ use Spatie\Activitylog\Models\Activity;
 class AuditableTest extends TestCase
 {
     use Auditable;
+
+    private Collection $user;
 
     public function setUp(): void
     {
@@ -26,14 +29,11 @@ class AuditableTest extends TestCase
         ]);
         $this->auditResourceIds = collect([$this->user[0]->id, $this->user[1]->id]);
         $this->auditDescription = 'test logger';
-        $this->auditBatchUuid = Str::uuid();
+        $this->auditBatchUuid = Str::uuid()->toString();
         $this->auditResourceClass = User::class;
     }
 
-    /**
-     * @test
-     */
-    public function should_log_auditing_info()
+    public function test_should_log_auditing_info(): void
     {
         $this->logAuditing();
         $activity = Activity::forBatch($this->auditBatchUuid)->get();

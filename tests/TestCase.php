@@ -1,6 +1,6 @@
 <?php
 
-namespace Onramplab\AuditingLog\Tests;
+namespace OnrampLab\AuditingLog\Tests;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use OnrampLab\AuditingLog\AuditingLogServiceProvider;
@@ -32,7 +32,6 @@ class TestCase extends OrchestraTestCase
      */
     protected function defineDatabaseMigrations()
     {
-        $this->loadLaravelMigrations();
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadMigrationsFrom(__DIR__ . '/Migrations');
     }

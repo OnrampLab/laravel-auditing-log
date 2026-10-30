@@ -1,18 +1,33 @@
 # laravel-auditing-log
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![CircleCI](https://circleci.com/gh/OnrampLab/laravel-package-template.svg?style=shield)](https://circleci.com/gh/OnrampLab/laravel-auditing-log)
+[![CI](https://github.com/OnrampLab/laravel-auditing-log/actions/workflows/ci.yml/badge.svg)](https://github.com/OnrampLab/laravel-auditing-log/actions/workflows/ci.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/onramplab/laravel-package-template.svg?style=flat-square)](https://packagist.org/packages/onramplab/laravel-auditing-log)
 
 A Laravel package providing auditing log
 
 ## Requirements
 
-- PHP >= 8.0;
-- Laravel >= 8
-- doctrine/dbal >= 3.6
-- spatie/laravel-activitylog >= 4.7
-- composer.
+- PHP >= 8.0
+- Laravel 8 - 13
+- spatie/laravel-activitylog 4.x
+- composer
+
+| Laravel | PHP       |
+|---------|-----------|
+| 8       | 8.0 - 8.1 |
+| 9       | 8.0 - 8.2 |
+| 10      | 8.1 - 8.3 |
+| 11      | 8.2 - 8.4 |
+| 12      | 8.2 - 8.5 |
+| 13      | 8.3 - 8.5 |
+
+> Laravel 8 - 11 are end-of-life and have unpatched security advisories. Composer >= 2.9 blocks
+> such versions by default, so installing on those Laravel versions may require allowing them
+> in your application:
+>
+> - Composer >= 2.10: `composer config policy.advisories.block false`
+> - Composer 2.9: `composer config audit.block-insecure false`
 
 ## Features
 

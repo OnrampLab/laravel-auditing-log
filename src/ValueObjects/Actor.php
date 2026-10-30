@@ -18,9 +18,14 @@ class Actor implements JsonSerializable
 
     /**
      * Custom data to log
+     *
+     * @var array<string, mixed>
      */
     public array $properties;
 
+    /**
+     * @param array<string, mixed> $data
+     */
     public function __construct(array $data)
     {
         $this->actorId = data_get($data, 'actorId');
@@ -28,6 +33,9 @@ class Actor implements JsonSerializable
         $this->properties = data_get($data, 'properties', []);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function toArray(): array
     {
         return [
@@ -37,6 +45,9 @@ class Actor implements JsonSerializable
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function jsonSerialize(): array
     {
         return $this->toArray();

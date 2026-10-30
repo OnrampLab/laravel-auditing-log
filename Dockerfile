@@ -1,12 +1,12 @@
 ARG PHP_EXTENSIONS="pdo_sqlite intl"
-FROM thecodingmachine/php:8.0-v4-slim-apache AS php
+FROM thecodingmachine/php:8.4-v5-slim-apache AS php
 
 USER root
 
 WORKDIR /var/www/html
 
 # install pickle
-RUN apt-get update && apt-get install -y bash wget
+RUN apt-get update && apt-get install -y bash wget gnupg
 RUN wget -O phive.phar https://phar.io/releases/phive.phar
 RUN wget -O phive.phar.asc https://phar.io/releases/phive.phar.asc
 RUN gpg --keyserver hkps://keys.openpgp.org --recv-keys 0x9D8A98B29B2D5D79
@@ -16,4 +16,6 @@ RUN sudo mv phive.phar /usr/local/bin/phive
 
 USER docker
 
-RUN phive install --force-accept-unsigned --trust-gpg-keys 67F861C3D889C656 phpDocumentor
+# Install from .phive/phars.xml so the phar lands at tools/phpdocumentor, the path `composer docs` uses
+COPY --chown=docker:docker .phive/phars.xml .phive/phars.xml
+RUN phive install --force-accept-unsigned --trust-gpg-keys 6DA3ACC4991FFAE5
