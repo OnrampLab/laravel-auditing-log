@@ -23,8 +23,11 @@ A Laravel package providing auditing log
 | 13      | 8.3 - 8.5 |
 
 > Laravel 8 - 11 are end-of-life and have unpatched security advisories. Composer >= 2.9 blocks
-> such versions by default, so installing on those Laravel versions may require adjusting
-> Composer's `policy.advisories` setting in your application.
+> such versions by default, so installing on those Laravel versions may require allowing them
+> in your application:
+>
+> - Composer >= 2.10: `composer config policy.advisories.block false`
+> - Composer 2.9: `composer config audit.block-insecure false`
 
 ## Features
 
