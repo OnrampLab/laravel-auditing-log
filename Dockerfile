@@ -16,4 +16,6 @@ RUN sudo mv phive.phar /usr/local/bin/phive
 
 USER docker
 
-RUN phive install --force-accept-unsigned --trust-gpg-keys 6DA3ACC4991FFAE5 phpDocumentor
+# Install from .phive/phars.xml so the phar lands at tools/phpdocumentor, the path `composer docs` uses
+COPY --chown=docker:docker .phive/phars.xml .phive/phars.xml
+RUN phive install --force-accept-unsigned --trust-gpg-keys 6DA3ACC4991FFAE5
