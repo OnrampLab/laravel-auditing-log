@@ -79,7 +79,7 @@
             "@php vendor/bin/phpcbf --standard=PSR2 src/"
         ],
         "docs": [
-            "@php tools/phpDocumentor"
+            "@php tools/phpdocumentor"
         ],
         "insights": [
             "@php vendor/bin/phpinsights --no-interaction"
